@@ -1,0 +1,20 @@
+Section A
+
+	Monday:		Phy 4241	Chem 4241	Phy 4242(B2/B1)
+	Tuesday:	Chem 4241	Math 4241	CSE 4202(B1)/CSE 4206(B2/2)
+	Wednesday:	CSE 4203	CSE 4205	Hum 4241
+	Thursday:	CSE 4203	Math 4241	CSE 4202(B2/2)/CSE 4206(B1)	Hum 4242
+	Friday:		CSE 4205	Phy 4241
+
+
+
+Section B
+
+	Monday:		Phy 4242(B2/B1)	Phy 4241	Chem 4241	CSE 4203
+	Tuesday:	CSE 4202(B1)/CSE 4206(B2/2)	Chem 4241	Math 4241	CSE 4203
+	Wednesday:	Hum 4241	CSE 4203	CSE 4205
+	Thursday:	Hum 4242	CSE 4203	Math 4241	CSE 4202(B2/2)/CSE 4206(B1)
+	Friday:		Phy 4241	CSE 4205
+
+
+
