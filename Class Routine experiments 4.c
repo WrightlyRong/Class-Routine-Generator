@@ -184,25 +184,25 @@ int main()
             {
                 routine[0][0][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in monday\n %d %d\n",routine[0][0][3],routine[0][4][2]);
+                printf("Swapped in monday for 16\n %d %d\n",routine[0][0][3],routine[0][4][2]);
             }
             else if(choiceof4classes[0]==2)
             {
                 routine[0][1][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in tuesday\n %d %d\n",routine[0][1][3],routine[0][4][2]);
+                printf("Swapped in tuesday for 16\n %d %d\n",routine[0][1][3],routine[0][4][2]);
             }
             else if(choiceof4classes[0]==3)
             {
                 routine[0][2][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in wednesday\n %d %d\n",routine[0][2][3],routine[0][4][2]);
+                printf("Swapped in wednesday for 16\n %d %d\n",routine[0][2][3],routine[0][4][2]);
             }
             else if(choiceof4classes[0]==4)
             {
                 routine[0][3][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in thursday\n %d %d\n",routine[0][3][3],routine[0][4][2]);
+                printf("Swapped in thursday for 16\n %d %d\n",routine[0][3][3],routine[0][4][2]);
             }
 
             if(choiceof4classes[1]==1)  //choice for 2nd day with 4 classes
@@ -291,25 +291,25 @@ int main()
             {
                 routine[0][0][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in monday\n %d %d\n",routine[0][0][3],routine[0][4][2]);
+                printf("Swapped in monday\n %d %d for 17\n",routine[0][0][3],routine[0][4][2]);
             }
             else if(choiceof4classes[0]==2)
             {
                 routine[0][1][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in tuesday\n %d %d\n",routine[0][1][3],routine[0][4][2]);
+                printf("Swapped in tuesday\n %d %d for 17\n",routine[0][1][3],routine[0][4][2]);
             }
             else if(choiceof4classes[0]==3)
             {
                 routine[0][2][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in wednesday\n %d %d\n",routine[0][2][3],routine[0][4][2]);
+                printf("Swapped in wednesday\n %d %dfor 17\n",routine[0][2][3],routine[0][4][2]);
             }
             else if(choiceof4classes[0]==4)
             {
                 routine[0][3][3]=9;
                 routine[0][4][2]=110;
-                printf("Swapped in thursday\n %d %d\n",routine[0][3][3],routine[0][4][2]);
+                printf("Swapped in thursday\n %d %dfor 17\n",routine[0][3][3],routine[0][4][2]);
             }
 
 
@@ -1892,7 +1892,8 @@ int main()
                     {
                         if(routine[k][i][j]==m && subname[m]!=NULL)
                         {
-                            fprintf(fpprint,"\t%s",subname[m]);
+                            if(k==1 && j==3 && strcmp(subname[m],subname[0])==0) continue;
+                            else fprintf(fpprint,"\t%s",subname[m]);
                         }
                     }
                 }
