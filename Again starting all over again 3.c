@@ -283,20 +283,44 @@ int main()
             if(j==0)
             {
                 section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[weekday[i].total_classes-2];
-                printf("Made this far1\n");
+                printf("Made this far11\n");
             }
             else if(j==1)
             {
                 section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[weekday[i].total_classes-1];
-                printf("Made this far2\n");
+                printf("Made this far21\n");
             }
             else
             {
                 section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[j-2];
-                printf("Made this far3\n");
+                printf("Made this far31\n");
             }
         }
     }
+
+
+    for(i=0; i<5; i++)
+    {
+        for(j=0; j<weekday[i].total_classes; j++)
+        {
+            if(j==0)
+            {
+                strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[weekday[i].total_classes-2].name);
+                printf("Made this far12\n");
+            }
+            else if(j==1)
+            {
+                strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[weekday[i].total_classes-1].name);
+                printf("Made this far22\n");
+            }
+            else
+            {
+                strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[j-2].name);
+                printf("Made this far32\n");
+            }
+        }
+    }
+
 
 
     int class_count=0;
