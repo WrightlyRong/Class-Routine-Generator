@@ -191,7 +191,7 @@ int main()
     scanf("%d",&total.teacher);
     for(i=0; i<total.teacher; i++)
     {
-        Givechoice:
+Givechoice:
         printf("How many courses will teacher with id %d teach?\n",i);
         scanf("%d",&teacher[i].total_course);
         printf("What is that course(s)?\n");
@@ -203,12 +203,12 @@ int main()
         {
             scanf("%d",&teacher[i].course_id[j]);
             teacher[i].total_classes_in_week=teacher[i].total_classes_in_week+course[teacher[i].course_id[j]-1].total_classes_in_week;
-        if(teacher[i].total_classes_in_week>6)
-        {
-            printf("Sorry, this crosses the credit limit. Please give your choice again\n");
-            teacher[i].total_classes_in_week=0;
-            goto Givechoice;
-        }
+            if(teacher[i].total_classes_in_week>6)
+            {
+                printf("Sorry, this crosses the credit limit. Please give your choice again\n");
+                teacher[i].total_classes_in_week=0;
+                goto Givechoice;
+            }
         }
     }
 
@@ -280,20 +280,36 @@ int main()
     {
         for(j=0; j<weekday[i].total_classes; j++)
         {
-            if(j==0)
+            if(weekday[i].total_classes>2)
             {
-                section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[weekday[i].total_classes-2];
-                printf("Made this far11\n");
-            }
-            else if(j==1)
-            {
-                section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[weekday[i].total_classes-1];
-                printf("Made this far21\n");
+                if(j==0)
+                {
+                    section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[weekday[i].total_classes-2];
+                    printf("Made this far11\n");
+                }
+                else if(j==1)
+                {
+                    section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[weekday[i].total_classes-1];
+                    printf("Made this far21\n");
+                }
+                else
+                {
+                    section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[j-2];
+                    printf("Made this far31\n");
+                }
             }
             else
             {
-                section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[j-2];
-                printf("Made this far31\n");
+                if(j==0)
+                {
+                    section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[1];
+                    printf("Made this far11\n");
+                }
+                else if(j==1)
+                {
+                    section[1].section_weekday[i].assigned_teacher_id[j]=section[0].section_weekday[i].assigned_teacher_id[0];
+                    printf("Made this far21\n");
+                }
             }
         }
     }
@@ -303,20 +319,36 @@ int main()
     {
         for(j=0; j<weekday[i].total_classes; j++)
         {
-            if(j==0)
+            if(weekday[i].total_classes>2)
             {
-                strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[weekday[i].total_classes-2].name);
-                printf("Made this far12\n");
-            }
-            else if(j==1)
-            {
-                strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[weekday[i].total_classes-1].name);
-                printf("Made this far22\n");
+                if(j==0)
+                {
+                    strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[weekday[i].total_classes-2].name);
+                    printf("Made this far12\n");
+                }
+                else if(j==1)
+                {
+                    strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[weekday[i].total_classes-1].name);
+                    printf("Made this far22\n");
+                }
+                else
+                {
+                    strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[j-2].name);
+                    printf("Made this far32\n");
+                }
             }
             else
             {
-                strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[j-2].name);
-                printf("Made this far32\n");
+                if(j==0)
+                {
+                    strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[1].name);
+                    printf("Made this far12\n");
+                }
+                else if(j==1)
+                {
+                    strcpy(section[1].section_weekday[i].assigned_course[j].name,section[0].section_weekday[i].assigned_course[0].name);
+                    printf("Made this far22\n");
+                }
             }
         }
     }
@@ -423,6 +455,8 @@ int main()
 
 
 /*
+Experiment 1:
+
 File1.txt
 File2.txt
 5
@@ -449,6 +483,7 @@ File2.txt
 
 
 
+Experiment 2:
 
 File3.txt
 File2.txt
@@ -480,4 +515,115 @@ File2.txt
 8 9
 2
 10 11
+
+
+
+Experiment 3:
+
+File3.txt
+File2.txt
+6
+5
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+11
+1
+1
+1
+2
+1
+3
+1
+4
+1
+5
+1
+6
+1
+7
+1
+8
+1
+9
+1
+10
+1
+11
+
+
+
+Experiment 4:
+
+File3.txt
+File2.txt
+6
+5
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+11
+1
+1
+1
+2
+1
+3
+1
+4
+1
+5
+1
+6
+1
+7
+1
+8
+1
+9
+1
+10
+1
+11
+
+
+
+Experiment 5:
+
+File3.txt
+File2.txt
+6
+5
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+2
+6
+1 2 3 4 5 6
+5
+7 8 9 10 11
 */
